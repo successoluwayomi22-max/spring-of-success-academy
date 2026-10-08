@@ -1,0 +1,267 @@
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background: radial-gradient(1200px 700px at 70% 20%, #1c5643 0%, var(--forest) 60%, #081b15 100%);
+  overflow: hidden;
+  color: var(--white);
+}
+
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-fade {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 46%;
+  background: linear-gradient(to top, #081b15 8%, transparent);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 92%);
+  margin-inline: auto;
+  padding: 9rem 0 5.5rem;
+}
+
+.hero-school {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--gold-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.hero-school::before {
+  content: '';
+  width: 34px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6.4vw, 4.9rem);
+  max-width: 15ch;
+  font-weight: 700;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 52ch;
+  margin-top: 1.3rem;
+  color: rgba(247, 244, 236, 0.78);
+  font-size: 1.1rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.2rem;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: 3.2rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat b {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--gold-soft);
+  display: block;
+  line-height: 1.1;
+}
+
+.hero-stat span {
+  font-size: 0.8rem;
+  color: rgba(247, 244, 236, 0.65);
+  letter-spacing: 0.04em;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-hint::after {
+  content: '';
+  width: 1.5px;
+  height: 42px;
+  background: linear-gradient(var(--gold), transparent);
+  animation: drip 2s infinite;
+}
+
+@keyframes drip {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  55% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* Campus explorer */
+.campus {
+  background: linear-gradient(180deg, #081b15, var(--forest-2));
+  color: var(--cream);
+}
+
+.campus-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.campus-stage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  min-height: 480px;
+  background: #0a231c;
+}
+
+#campus-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  inset: 0;
+  touch-action: pan-y;
+}
+
+.campus-hint {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 236, 0.55);
+  pointer-events: none;
+}
+
+.campus-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin-top: 1.6rem;
+}
+
+.campus-chip {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(247, 244, 236, 0.8);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.3s var(--ease);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.campus-chip .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.campus-chip:hover {
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+.campus-chip.active {
+  background: rgba(217, 164, 65, 0.14);
+  border-color: var(--gold);
+  color: var(--gold-soft);
+}
+
+.campus-chip.active .dot {
+  background: var(--gold);
+}
+
+.campus-info {
+  margin-top: 1.6rem;
+  padding: 1.4rem 1.5rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.5s var(--ease);
+}
+
+.campus-info h3 {
+  color: var(--gold-soft);
+  margin-bottom: 0.4rem;
+}
+
+.campus-info p {
+  color: rgba(247, 244, 236, 0.75);
+  font-size: 0.94rem;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .campus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campus-stage {
+    min-height: 360px;
+  }
+}
