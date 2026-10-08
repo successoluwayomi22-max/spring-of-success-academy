@@ -6,21 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint ."
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@rolldown/binding-win32-ia32-msvc": "^1.0.0-beta.52",
-    "@vitejs/plugin-react": "^4.7.0",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "^5.4.21"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.169.0"
   },
   "devDependencies": {
-    "@eslint/js": "latest",
-    "eslint": "latest",
-    "eslint-plugin-react-hooks": "latest",
-    "eslint-plugin-react-refresh": "latest",
-    "globals": "latest"
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
   }
 }
